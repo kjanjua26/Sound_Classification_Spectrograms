@@ -9,6 +9,7 @@ dataset_ = '/Users/Janjua/Desktop/ItalyWork/Multimodal_DL/Sound_Imag/ESC-50-mast
 
 def graph_spectrogram(wav_file, class_, filename):
     sound_info, frame_rate = get_wav_info(wav_file)
+    frame_rate = 16000
     mean_ = np.mean(sound_info)
     std = np.std(sound_info)
     print("====================================")
@@ -18,7 +19,7 @@ def graph_spectrogram(wav_file, class_, filename):
     print("====================================")
     mean_norm_wave = np.divide(sound_info, mean_)
     std_norm_wave = np.divide(mean_norm_wave, std)
-    pylab.figure(num=None, figsize=(19, 12))
+    pylab.figure(num=None, figsize=(14, 8))
     pylab.subplot(111)
     pylab.title('spectrogram of %r' % wav_file)
     pylab.specgram(std_norm_wave, Fs=frame_rate)
