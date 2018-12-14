@@ -29,7 +29,7 @@ def get_wav_info(wav_file):
 def convert_to_2channel(wav_file):
     temp = wav_file.split('.')[0].replace("twochanel","")
     out_name = str(temp) + ".wav"
-    os.popen("ffmpeg -i {} -ac 2 {}".format(wav_file, "2channelNoisyGun.wav"), "w")
+    os.popen("ffmpeg -i {} -ac 2 {}".format(wav_file, out_name), "w")
 
 def clear_two_chanel(wav_file):
     if 'twochanel' in wav_file:
